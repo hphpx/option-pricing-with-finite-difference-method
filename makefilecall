@@ -1,0 +1,17 @@
+target=testcall
+
+
+$(target): callmain.o optcall.o option.o
+	g++ -o $(target) callmain.o optcall.o option.o
+
+callmain.o: callmain.cpp
+	g++ -c callmain.cpp
+
+optcall.o: optcall.cpp
+	g++ -c optcall.cpp
+
+option.o: option.cpp
+	g++ -c option.cpp
+
+clean:
+	rm *.o $(target) 

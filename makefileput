@@ -1,0 +1,13 @@
+targetp=testput
+
+$(targetp): putmain.o optput.o option.o
+	g++ -o $(targetp) putmain.o optput.o option.o
+putmain.o: putmain.cpp
+	g++ -c putmain.cpp
+optput.o: optput.cpp
+	g++ -c optput.cpp
+option.o: option.cpp
+	g++ -c option.cpp
+
+clean:
+	rm *.o $(targetp)
